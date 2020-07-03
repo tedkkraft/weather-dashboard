@@ -2,25 +2,22 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>title</title>
+    <title>Weather Dashboard</title>
 
-    <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link 
-    rel="stylesheet" 
-    href="style.css"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="javascript.js"></script>
 
   </head>
 
   <body>
 
-    <!-- Container -->
-    <div class="container-fluid">
-
     <!-- Header -->
+    <div class="container-fluid">
         <header class="header">
             <div class="row justify-content-center bg-dark text-white">
                 <div class="col-md-4">
@@ -28,12 +25,40 @@
                 </div>
             </div>
         </header>
-  
+    </div>
 
+     <!-- Main Content -->
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- Search Panel Column -->
+            <div class="col-md-4">
+                <div class="card bg-light">
+                    asdf
+                </div>
+            </div>
+
+            <!-- Forecast Column -->
+            <div class="col-md-8">
+
+                <!-- Daily Forecast Row -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="well">2</div>
+                    </div>
+                </div>
+
+                <!-- Weekly Forecast Row -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="well">4</div>
+                    </div>
+                </div>
+
+            </div><!-- Forecast Column Close -->
+        </div> <!-- Main Content Row Close -->
     </div> <!-- Container Close -->
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="javascript.js"></script>
 
   </body>
 </html>
