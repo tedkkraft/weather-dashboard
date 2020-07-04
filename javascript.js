@@ -1,40 +1,58 @@
-var APIKey = "ca39045c73add718cdee665b1e7622de";
 
-var cityName = "austin"
+    // var APIKey = "ca39045c73add718cdee665b1e7622de";
 
-var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey;
+    // var mainCity = "austin";
 
-$.ajax({
-    url: queryURL,
-    method: "GET"
-}).then(function(response) {
-    var temp = resopnse.main.temp
-});
+    // var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + mainCity + "&appid=" + APIKey;
 
-var cities = [];
+    // $.ajax({
+    //     url: queryURL,
+    //     method: "GET"
+    // }).then(function(response) {
+    //     console.log(response);
+    //     $(".city").html("<h1>" + response.name + "</h1>");
+    //     $(".wind").text("Wind Speed: " + response.wind.speed + "MPH");
+    //     $(".humidity").text("Humidity: " + response.main.humidity + "%");
 
-function renderForecast() {
-    $("#searchHistory").empty();
+    //     var tempF = (response.main.temp - 273.15) * 1.80 + 32;
+    //     $(".temp").text("Temperature: " + tempF.toFixed(2) + " F");
 
-   // for (var i = 0; i < cities.length; i++) {
-      //  var a = 
+    // });
 
-    //}
+$(document).ready(function(){
+
+function renderForecast(searchCity) {
+    console.log("inside renderForecast");
     
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey;
+    var APIKey = "ca39045c73add718cdee665b1e7622de";
+
+    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + searchCity + "&appid=" + APIKey;
 
     $.ajax({
         url: queryURL,
         method: "GET"
-    }).then(function(response) {
+    })
+    
+    
+    
+    .then(function(response) {
         console.log(response);
+        $(".city").html("<h1>" + response.name + "</h1>");
+        $(".wind").text("Wind Speed: " + response.wind.speed + "MPH");
+        $(".humidity").text("Humidity: " + response.main.humidity + "%");
+
+        var tempF = (response.main.temp - 273.15) * 1.80 + 32;
+        $(".temp").text("Temperature: " + tempF.toFixed(2) + " F");
+
+
+       
     });
 }
 
 $("#searchBtn").on("click", function(event) {
     event.preventDefault();
-    var citySearchVal = $("#citySearch").val().trim();
-    cities.push(citySearchVal);
-    console.log(cities);
-    renderForecast();
+    var searchCity = $("#citySearch").val().trim();
+    renderForecast(searchCity);
+});
+
 });
